@@ -4,16 +4,14 @@
 *.dll
 *.so
 *.dylib
-vault-plugin-secrets-jwt
 
-# Test binary, built with `go test -c`
+# Test related files
 *.test
+test.log
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-# bin directory where the binary is built to
+# Binary files/folders
 bin/
+vault-plugin-secrets-jwt
