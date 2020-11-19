@@ -55,28 +55,28 @@ Generates a JWT & returns it as a secret.
 Validates a provided JWT against the role specified
 
 ## Features/TODO list
-- [x] Certain fields will need to be explicitly specified types:
+- ✅ Certain fields will need to be explicitly specified types:
   - `exp` - Duration (creation + this value => JWT expiration)
-- [x] Validation of key/value pairs against default types
-  - [x] Not allowed:
+- ✅ Validation of key/value pairs against default types
+  - ✅ Not allowed:
     - `jti` (JWT ID)
     - `iat` (Issued At)
-  - [x] Defaults:
+  - ✅ Defaults:
     - `iss` - `"vault/{name}"` where `{name}` is the name of the role?
-- [x] Allow user to provide key
-- [x] Generate keys when one isn't provided
-  - [x] RSA
-  - [x] HMAC
-  - [x] ECDSA
-- [x] Supported key types
-  - [x] RSA   (RS256, RS384, RS512)
-  - [x] HMAC  (HS256, HS384, HS512)
-  - [x] ECDSA (ES256, ES384, ES512)
-- [ ] Logging?
-- [ ] Key lifecycle
-  - [ ] Replace an existing key
-  - [ ] Allow validation with an old key for a configurable amount of time?
-- [ ] Allow for time skewing
+- ✅ Allow user to provide key
+- ✅ Generate keys when one isn't provided
+  - ✅ RSA
+  - ✅ HMAC
+  - ✅ ECDSA
+- ✅ Supported key types
+  - ✅ RSA   (RS256, RS384, RS512)
+  - ✅ HMAC  (HS256, HS384, HS512)
+  - ✅ ECDSA (ES256, ES384, ES512)
+- ❌ Logging?
+- ❌ Key lifecycle
+  - ❌ Replace an existing key
+  - ❌ Allow validation with an old key for a configurable amount of time?
+- ❌ Allow for time skewing
   - This one is potentially problematic with the library I'm using here since it is configured
     with a global TimeFunc variable.
 
