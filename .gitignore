@@ -14,3 +14,6 @@ vault-plugin-secrets-jwt
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# bin directory where the binary is built to
+bin/
