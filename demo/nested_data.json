@@ -1,0 +1,9 @@
+{
+    "alg": "HS512",
+    "bar": "baz",
+    "exp": "7s",
+    "foo": "bar",
+    "nested": {
+        "bar": "foo"
+    }
+}
