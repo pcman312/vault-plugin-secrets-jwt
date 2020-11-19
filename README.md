@@ -86,6 +86,5 @@ Validates a provided JWT against the role specified
   that the operator can specify on what fields can be specified & maybe what values in each
   field can be used.
 - Allow users to invalidate specific JWTs based on the JWT ID field (`jti`)
-  Ex: `/roles/{name}/invalidate/{jti}`
 - An endpoint that returns the role name of the provided JWT
 - Templating within fields. Ex: `{.RoleName}` for the name of the role in Vault
