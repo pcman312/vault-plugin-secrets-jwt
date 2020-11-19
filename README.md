@@ -1,5 +1,5 @@
 # vault-plugin-secrets-jwt
-A Vault secrets engine for generating and validating JWTs.
+A Vault secrets engine for generating and validating arbitrary JWTs.
 
 ## Usage
 
