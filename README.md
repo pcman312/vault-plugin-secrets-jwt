@@ -15,6 +15,9 @@ A Vault secrets engine for generating and validating arbitrary JWTs.
    - `exp`: The amount of time before a JWT expires. Unlike in an actual JWT, this is the duration that the JWT
      should live. This can be either an integer indicating a number of seconds, or use a suffix notation such as `1h`
    
+   If you do not specify the `key` field, a key will be generated automatically by Vault. If you do specify a key,
+   it must match the signing method specified in `alg`.
+   
    You may specify any arbitrary key/value pairs you wish.
    
    ```shell script
