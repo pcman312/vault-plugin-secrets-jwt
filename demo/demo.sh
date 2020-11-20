@@ -57,7 +57,7 @@ BAD_TOKEN="eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYWQgc3ViamVjdCIsIm5h
 p "vault write jwt/roles/rsa_role/validate token=\${BAD_TOKEN}"
 vault write jwt/roles/rsa_role/validate token=${BAD_TOKEN}
 
-vault delete jwt/roles/rsa_role/config
+vault delete jwt/roles/rsa_role/config > /dev/null
 wait
 
 #################################
@@ -78,18 +78,18 @@ echo "vault write -format json jwt/roles/rsa_role/validate token=\${TOKEN}"
 vault write -format json jwt/roles/rsa_role/validate token=${TOKEN} | jq .
 echo # Give visual space
 
-echo -n "Waiting for token to expire..."
-while [ true ]; do
-	vault write jwt/roles/rsa_role/validate token=${TOKEN} > /dev/null 2> /dev/null
-	if [ $? -ne 0 ]; then
-		break;
-	fi
-	sleep 0.5
-done
-echo "Done"
-
-p "vault write -format json jwt/roles/rsa_role/validate token=\${TOKEN}"
-vault write -format json jwt/roles/rsa_role/validate token=${TOKEN} | jq .
+#echo -n "Waiting for token to expire..."
+#while [ true ]; do
+#	vault write jwt/roles/rsa_role/validate token=${TOKEN} > /dev/null 2> /dev/null
+#	if [ $? -ne 0 ]; then
+#		break;
+#	fi
+#	sleep 0.5
+#done
+#echo "Done"
+#
+#p "vault write -format json jwt/roles/rsa_role/validate token=\${TOKEN}"
+#vault write -format json jwt/roles/rsa_role/validate token=${TOKEN} | jq .
 
 #################################
 ##### Nested data with HMAC #####
@@ -128,8 +128,9 @@ echo "Done"
 p "vault write -format json jwt/roles/hmac_role/validate token=\${TOKEN}"
 vault write -format json jwt/roles/hmac_role/validate token=${TOKEN} | jq .
 
-echo "Features:"
+echo -n "Features:"
 wait
+echo " ##################################################"
 echo "- Key types:"
 echo "  - ✅ RSA   (RS256, RS384, RS512)"
 echo "  - ✅ HMAC  (HS256, HS384, HS512)"
