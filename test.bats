@@ -37,7 +37,7 @@ stop_vault() {
 }
 
 setup() {
-  start_vault "/Users/mgolowka/dev/vault/plugins/"
+  start_vault "/Users/pcman312/dev/vault/plugins/"
 
   vault secrets enable -path=jwt vault-plugin-secrets-jwt
 }
