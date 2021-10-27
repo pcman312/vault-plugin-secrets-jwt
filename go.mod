@@ -9,5 +9,5 @@ require (
 	github.com/hashicorp/go-uuid v1.0.1
 	github.com/hashicorp/vault/api v1.0.4
 	github.com/hashicorp/vault/sdk v0.1.13
-	github.com/tidwall/gjson v1.6.1
+	github.com/tidwall/gjson v1.9.3
 )
